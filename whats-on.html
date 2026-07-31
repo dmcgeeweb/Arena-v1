@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&rsquo;s on &mdash; National Basketball Arena</title>
+<meta name="description" content="Upcoming events at the National Basketball Arena, Tymon Park, Dublin 24.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0B7C42; --green-dk:#06582F; --green-lt:#E7F1EA;
+  --ink:#10161A; --ink-60:#55606A; --line:#DCE2E0;
+  --paper:#FFFFFF; --paper-2:#F4F7F5; --maple:#C4863C; --red:#C3341F; --red-lt:#FBE6E2;
+  --display:"Outfit",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em;text-transform:uppercase}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+.mark{display:block;flex-shrink:0}
+.masthead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;gap:26px;height:76px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.18}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ink-60);font-weight:400;text-transform:none}
+nav{margin-left:auto;display:flex;gap:24px}
+nav a{font-size:14px;text-decoration:none;color:var(--ink-60);font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:.15s}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--green)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--green)}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:15px;background:var(--green);color:#fff;text-decoration:none;padding:12px 22px;border:0;cursor:pointer;transition:.15s;text-align:center}
+.btn:hover,.btn:focus-visible{background:var(--green-dk)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+.page-head{padding:clamp(40px,6vw,68px) 0 clamp(28px,4vw,44px)}
+.page-head h1{font-size:clamp(34px,4.6vw,58px);font-weight:800;margin-top:16px}
+.page-head p{margin-top:18px;color:var(--ink-60);max-width:56ch}
+.page-head .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+footer{background:var(--ink);color:#fff;padding:56px 0 34px;margin-top:clamp(56px,7vw,96px)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8A959C;margin-bottom:14px;font-weight:400}
+footer a{display:block;color:#fff;text-decoration:none;font-size:14.5px;padding:5px 0;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.colophon{grid-column:1/-1;border-top:1px solid #262E34;margin-top:24px;padding-top:20px;font-family:var(--mono);font-size:11px;color:#8A959C;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:920px){
+  footer .wrap{grid-template-columns:1fr 1fr}
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);z-index:60}
+  nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .masthead .btn{display:none}
+}
+
+.ev-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  padding:4px 9px;color:#fff;background:var(--green)}
+.tag-sport{background:#57A97B}.tag-conf{background:var(--ink)}.tag-expo{background:var(--maple)}
+.tag-private{background:#B7BFBC;color:var(--ink)}
+.tix{border:1px solid var(--line);background:var(--paper-2);padding:18px;display:flex;flex-direction:column;gap:14px}
+.tix-price{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.tix-price span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-60)}
+.tix-price b{font-family:var(--display);font-weight:800;font-size:30px;line-height:1}
+.tix .btn{width:100%}
+.tix.out{background:var(--red-lt);border-color:var(--red)}
+.tix.out .tix-price span{color:var(--red)}
+.tix.out .tix-price b{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px;text-underline-offset:3px}
+.soldout{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--display);font-weight:800;
+  font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:13px 10px;text-align:center;cursor:not-allowed}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;padding:26px 0 0;border-top:1px solid var(--line)}
+.filter{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  background:#fff;border:1px solid var(--line);color:var(--ink-60);padding:9px 14px;cursor:pointer;transition:.15s}
+.filter:hover{color:var(--ink);border-color:var(--ink-60)}
+.filter[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.events{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
+.ev-card{background:#fff;display:grid;grid-template-columns:96px 1fr 214px;gap:clamp(16px,2.5vw,32px);
+  padding:26px;align-items:start}
+.ev-card[hidden]{display:none}
+.ev-date{text-align:center;border:1px solid var(--line);padding:10px 4px 12px}
+.ev-date .dd{display:block;font-family:var(--display);font-weight:800;font-size:32px;line-height:1}
+.ev-date .mm{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60);margin-top:5px}
+.ev-date .yy{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--ink-60);margin-top:2px}
+.ev-body h2{font-size:21px;margin-top:11px;text-transform:none;letter-spacing:-.005em}
+.ev-when{font-family:var(--mono);font-size:11.5px;color:var(--ink-60);margin-top:8px;letter-spacing:.03em}
+.ev-body p.blurb{margin-top:12px;font-size:15.5px;color:var(--ink-60);max-width:56ch}
+.hire-strip{background:var(--green);color:#fff;padding:clamp(28px,4vw,44px) 0;margin-top:clamp(40px,5vw,64px)}
+.hire-strip .wrap{display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
+.hire-strip h2{font-size:clamp(21px,2.6vw,29px);font-weight:800;max-width:22ch}
+.hire-strip .btn{background:#fff;color:var(--green)}
+.hire-strip .btn:hover{background:var(--ink);color:#fff}
+.empty{background:#fff;padding:40px 26px;text-align:center;color:var(--ink-60);font-size:15.5px}
+@media (max-width:900px){
+  .ev-card{grid-template-columns:78px 1fr}
+  .tix{grid-column:1/-1}
+  .hire-strip .wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="National Basketball Arena, home">
+      <svg class="mark" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#0B7C42"/>
+        <g clip-path="url(#bcwo)">
+          <circle cx="50" cy="50" r="34" fill="#fff"/>
+          <g stroke="#0B7C42" fill="none">
+            <path d="M34 16 C 20 34, 20 66, 34 84" stroke-width="2.2"/>
+            <path d="M42 15 C 32 34, 32 66, 42 85" stroke-width="2.6"/>
+            <path d="M50 15 C 46 34, 46 66, 50 85" stroke-width="3"/>
+            <path d="M58 15 C 60 34, 60 66, 58 85" stroke-width="3.4"/>
+            <path d="M66 16 C 74 34, 74 66, 66 84" stroke-width="3.8"/>
+            <path d="M74 20 C 86 36, 86 64, 74 80" stroke-width="4.2"/>
+            <path d="M80 25 C 94 38, 94 62, 80 75" stroke-width="4.6"/>
+          </g>
+        </g>
+        <defs><clipPath id="bcwo"><circle cx="50" cy="50" r="34"/></clipPath></defs>
+      </svg>
+      <b>National<br>Basketball Arena<span>Tymon Park &middot; Dublin 24</span></b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="whats-on.html" aria-current="page">What&rsquo;s on</a>
+      <a href="calendar.html">Availability</a>
+    </nav>
+    <a class="btn" href="index.html#enquire">Contact us</a>
+  </div>
+</header>
+<main>
+  <div class="wrap page-head">
+    <p class="eyebrow">What&rsquo;s on</p>
+    <h1>Upcoming events</h1>
+    <p>Everything open to the public at the Arena over the coming months. Parking is free and there are 500 spaces on site.</p>
+    <div class="filters" role="group" aria-label="Filter events by type">
+      <button class="filter" data-cat="all" aria-pressed="true">All events</button>
+      <button class="filter" data-cat="bball" aria-pressed="false">Basketball</button>
+      <button class="filter" data-cat="sport" aria-pressed="false">Sport</button>
+      <button class="filter" data-cat="conf" aria-pressed="false">Conference</button>
+      <button class="filter" data-cat="expo" aria-pressed="false">Exhibition</button>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="events" id="events">
+            <article class="ev-card" data-cat="sport">
+        <div class="ev-date"><span class="dd">12&ndash;13</span><span class="mm">SEP</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag tag-sport">Sport</span>
+          <h2>Taekwondo National Championships</h2>
+          <p class="ev-when">Sat &amp; Sun, 9:00am &ndash; 6:00pm</p>
+          <p class="blurb">All belts and age grades over two days, with eight competition mats laid across the full arena floor. Under-8s free.</p>
+        </div>
+        <div class="tix"><p class="tix-price"><span>From</span> <b>&euro;15</b></p><a class="btn" href="https://ireland.basketball/tickets">Buy tickets</a></div>
+      </article>
+      <article class="ev-card" data-cat="bball">
+        <div class="ev-date"><span class="dd">19</span><span class="mm">SEP</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag ">Basketball</span>
+          <h2>Ireland v Cyprus &mdash; EuroBasket Qualifier</h2>
+          <p class="ev-when">Sat, tip-off 7:30pm &middot; doors 6:15pm</p>
+          <p class="blurb">Senior men&rsquo;s FIBA EuroBasket qualifier. Bleachers deployed on all four sides for a full house of 2,500.</p>
+        </div>
+        <div class="tix out"><p class="tix-price"><span>From</span> <b>&euro;25</b></p><span class="soldout" role="status">Sold out</span></div>
+      </article>
+      <article class="ev-card" data-cat="bball">
+        <div class="ev-date"><span class="dd">3</span><span class="mm">OCT</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag ">Basketball</span>
+          <h2>&Eacute;anna v Belfast Star &mdash; Super League</h2>
+          <p class="ev-when">Sat, tip-off 7:00pm &middot; doors 6:00pm</p>
+          <p class="blurb">Men&rsquo;s Super League regular season. Sideline seating only; under-16s half price with a paying adult.</p>
+        </div>
+        <div class="tix"><p class="tix-price"><span>From</span> <b>&euro;12</b></p><a class="btn" href="https://ireland.basketball/tickets">Buy tickets</a></div>
+      </article>
+      <article class="ev-card" data-cat="conf">
+        <div class="ev-date"><span class="dd">8</span><span class="mm">OCT</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag tag-conf">Conference</span>
+          <h2>Tech Ireland Founders Summit</h2>
+          <p class="ev-when">Thu, 9:30am &ndash; 5:00pm</p>
+          <p class="blurb">Full-floor conference for 900 delegates, with breakout sessions in the hospitality suite. Tickets sold by the organiser.</p>
+        </div>
+        <div class="tix"><p class="tix-price"><span>From</span> <b>&euro;180</b></p><a class="btn" href="https://ireland.basketball/tickets">Buy tickets</a></div>
+      </article>
+      <article class="ev-card" data-cat="expo">
+        <div class="ev-date"><span class="dd">24</span><span class="mm">OCT</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag tag-expo">Exhibition</span>
+          <h2>Dublin Brick Show</h2>
+          <p class="ev-when">Sat, 10:00am &ndash; 5:00pm</p>
+          <p class="blurb">Family exhibition with build zones, trader stands and display models across the arena floor. Free parking on site.</p>
+        </div>
+        <div class="tix"><p class="tix-price"><span>From</span> <b>&euro;10</b></p><a class="btn" href="https://ireland.basketball/tickets">Buy tickets</a></div>
+      </article>
+      <article class="ev-card" data-cat="bball">
+        <div class="ev-date"><span class="dd">31</span><span class="mm">OCT</span><span class="yy">2026</span></div>
+        <div class="ev-body">
+          <span class="ev-tag ">Basketball</span>
+          <h2>National Cup Semi-Finals</h2>
+          <p class="ev-when">Sat, from 2:00pm</p>
+          <p class="blurb">Four semi-finals across the day, men&rsquo;s and women&rsquo;s. One ticket admits to all games.</p>
+        </div>
+        <div class="tix"><p class="tix-price"><span>From</span> <b>&euro;18</b></p><a class="btn" href="https://ireland.basketball/tickets">Buy tickets</a></div>
+      </article>
+      <p class="empty" id="empty" hidden>No events in that category right now. Try another filter.</p>
+    </div>
+  </div>
+  <section class="hire-strip">
+    <div class="wrap">
+      <h2>Running an event of your own?</h2>
+      <a class="btn" href="calendar.html">See available dates</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>National Basketball Arena</h4>
+      <p style="font-size:15px;line-height:1.6;opacity:.85">Tymon Park, Dublin, D24 N449<br>+353 1 459 0211<br>arenabookings@ireland.basketball</p>
+    </div>
+    <div>
+      <h4>Hire the venue</h4>
+      <a href="calendar.html">Availability</a>
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical spec</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="index.html#enquire">Check a date</a>
+    </div>
+    <div>
+      <h4>Basketball</h4>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="https://ireland.basketball/tickets">Tickets</a>
+      <a href="https://ireland.basketball/internationalfixtures">Fixtures</a>
+      <a href="https://ireland.basketball/">Basketball Ireland</a>
+    </div>
+    <div class="colophon">
+      <span>A not-for-profit venue owned by Basketball Ireland</span>
+      <span>Privacy &middot; Accessibility</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var mb=document.getElementById("menuBtn"),nv=document.getElementById("nav");
+  if(mb) mb.addEventListener("click",function(){
+    var open=nv.classList.toggle("open");
+    mb.setAttribute("aria-expanded",String(open));
+    mb.textContent=open?"Close":"Menu";
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll(".filter")),
+      cards=[].slice.call(document.querySelectorAll(".ev-card")),
+      empty=document.getElementById("empty");
+  btns.forEach(function(b){
+    b.addEventListener("click",function(){
+      var cat=b.dataset.cat, shown=0;
+      btns.forEach(function(o){o.setAttribute("aria-pressed",String(o===b));});
+      cards.forEach(function(c){var on=(cat==="all"||c.dataset.cat===cat); c.hidden=!on; if(on)shown++;});
+      empty.hidden=shown>0;
+    });
+  });
+})();
+</script>
+</body>
+</html>

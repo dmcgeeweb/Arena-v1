@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>National Basketball Arena — Venue Hire, Tymon Park, Dublin 24</title>
+<meta name="description" content="Ireland's premier indoor sport arena. 18,000 sq ft of reconfigurable floor off the M50 at Junction 11. Exhibitions, conferences, exams, concerts and sport. 500 free parking spaces.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B7C42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Basketball Ireland / Arena palette — sampled from the logo.
+     Replace with the exact brand hex values when BI send the guidelines. */
+  --green:#0B7C42;
+  --green-dk:#06582F;
+  --green-lt:#E7F1EA;
+  --ink:#10161A;
+  --ink-60:#55606A;
+  --line:#DCE2E0;
+  --paper:#FFFFFF;
+  --paper-2:#F4F7F5;
+  --maple:#C4863C;
+
+  --display:"Outfit",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+
+  --wrap:1180px;
+  --gap:clamp(56px,7vw,112px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+
+h1,h2,h3,.display{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em;text-transform:uppercase}
+
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+
+/* ---------- logo ---------- */
+.mark{display:block;flex-shrink:0}
+
+/* ---------- header ---------- */
+.masthead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;gap:26px;height:76px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.18}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ink-60);font-weight:400;text-transform:none}
+nav{margin-left:auto;display:flex;gap:26px}
+nav a{font-size:14px;text-decoration:none;color:var(--ink-60);font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:.15s}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--green)}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:15px;background:var(--green);color:#fff;text-decoration:none;padding:12px 22px;border:0;cursor:pointer;transition:.15s}
+.btn:hover,.btn:focus-visible{background:var(--green-dk)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(40px,6vw,72px) 0 var(--gap)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(28px,4vw,56px);align-items:start}
+.hero h1{font-size:clamp(36px,4.9vw,64px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--green)}
+.deck{margin-top:20px;font-family:var(--display);font-weight:600;font-size:clamp(19px,2vw,24px);line-height:1.25;text-transform:uppercase;letter-spacing:.01em}
+.hero p.lede{margin-top:14px;font-size:clamp(16.5px,1.5vw,18.5px);color:var(--ink-60);max-width:44ch}
+.hero-cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.stats{margin-top:36px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:16px 14px 0 0}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(26px,3vw,34px);line-height:1}
+.stat span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-60);margin-top:7px}
+
+/* ---------- plan (signature) ---------- */
+.plan-panel{background:var(--paper-2);border:1px solid var(--line);padding:18px 18px 20px}
+.plan-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.plan-head h2{font-size:13px;letter-spacing:.06em}
+.plan-head .hint{font-family:var(--mono);font-size:11px;color:var(--ink-60)}
+.modes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.mode{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;background:#fff;border:1px solid var(--line);color:var(--ink-60);padding:8px 12px;cursor:pointer;transition:.15s}
+.mode:hover{color:var(--ink);border-color:var(--ink-60)}
+.mode[aria-selected="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.plan-figure{background:#fff;border:1px solid var(--line)}
+.plan-figure svg{display:block;width:100%;height:auto}
+.mode-layer{opacity:0;transition:opacity .38s ease}
+.mode-layer.is-on{opacity:1}
+.plan-read{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px;border-top:1px solid var(--line);padding-top:14px}
+.plan-read div span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-60)}
+.plan-read div b{font-family:var(--display);font-weight:800;font-size:22px}
+.plan-read div:first-child b{color:var(--green)}
+.plan-note{margin-top:12px;font-size:14.5px;color:var(--ink-60);min-height:2.8em}
+
+/* ---------- sections ---------- */
+section{padding:var(--gap) 0;border-top:1px solid var(--line)}
+.sec-head{max-width:60ch;margin-bottom:44px}
+.sec-head h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;margin-top:16px}
+.sec-head p{margin-top:16px;color:var(--ink-60)}
+
+.spaces{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.space{background:var(--paper);padding:28px 26px 30px;display:flex;flex-direction:column}
+.space h3{font-size:22px;font-weight:700}
+.space .sqft{font-family:var(--mono);font-size:12px;color:var(--green);letter-spacing:.08em;margin-top:8px}
+.space p{margin-top:14px;font-size:15.5px;color:var(--ink-60);flex:1}
+.space dl{margin-top:20px;border-top:1px solid var(--line);padding-top:14px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:13.5px}
+.space dt{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);padding-top:2px}
+.space dd{font-weight:500}
+
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+.spec h3{font-size:15px;letter-spacing:.06em;padding-bottom:10px;border-bottom:2px solid var(--green)}
+.spec ul{list-style:none;margin-top:4px}
+.spec li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.spec li b{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-60);flex:0 0 96px;font-weight:400;padding-top:3px}
+
+.here{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.here h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;margin-top:16px}
+.here ul{list-style:none;margin-top:8px}
+.here li{padding:16px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+.here li b{font-family:var(--display);font-weight:800;font-size:19px;flex:0 0 92px;color:var(--green)}
+.here li span{font-size:15.5px;color:var(--ink-60)}
+.addr{background:var(--ink);color:#fff;padding:32px}
+.addr .eyebrow{color:#7FD3A3}
+.addr .eyebrow::after{background:#333C43}
+.addr p{margin-top:18px;font-size:19px;line-height:1.5}
+.addr .code{font-family:var(--mono);font-size:13px;color:#7FD3A3;letter-spacing:.1em;margin-top:6px;display:block}
+.addr a{color:#fff;display:block;margin-top:16px;font-size:15px}
+
+.npo{background:var(--green);color:#fff;padding:clamp(36px,5vw,56px) 0;border:0}
+.npo .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.npo h2{font-size:clamp(24px,3vw,34px);font-weight:800;max-width:16ch}
+.npo p{font-size:16.5px;max-width:52ch;opacity:.94}
+
+.enq{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,64px);align-items:start}
+.enq h2{font-size:clamp(28px,3.6vw,44px);font-weight:800;margin-top:16px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-60)}
+input,select,textarea{font-family:var(--body);font-size:16px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:12px 13px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--green);outline:2px solid rgba(11,124,66,.25);outline-offset:0}
+textarea{min-height:112px;resize:vertical}
+.consent{grid-column:1/-1;display:flex;gap:11px;align-items:flex-start;font-size:13.5px;color:var(--ink-60)}
+.consent input{width:auto;flex:0 0 auto;margin-top:3px}
+.form-msg{grid-column:1/-1;font-size:14.5px;padding:12px 14px;display:none}
+.form-msg.ok{display:block;background:var(--green-lt);border-left:3px solid var(--green)}
+.form-msg.err{display:block;background:#FBE6E2;border-left:3px solid #C3341F}
+
+footer{background:var(--ink);color:#fff;padding:56px 0 34px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8A959C;margin-bottom:14px;font-weight:400}
+footer a{display:block;color:#fff;text-decoration:none;font-size:14.5px;padding:5px 0;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.colophon{grid-column:1/-1;border-top:1px solid #262E34;margin-top:24px;padding-top:20px;font-family:var(--mono);font-size:11px;color:#8A959C;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:920px){
+  .hero-grid,.here,.enq{grid-template-columns:1fr}
+  .npo .wrap{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr 1fr}
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line)}
+  nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .masthead .btn{display:none}
+}
+@media (max-width:560px){
+  form{grid-template-columns:1fr}
+  .stats,.plan-read{grid-template-columns:1fr 1fr}
+}
+
+/* ---------- photo reel ---------- */
+.reel{position:relative;overflow:hidden;background:var(--ink);border-bottom:1px solid var(--line);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%);
+          mask-image:linear-gradient(to right,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.reel-track{display:flex;gap:3px;width:max-content;animation:reelscroll 64s linear infinite}
+.reel:hover .reel-track,.reel:focus-within .reel-track{animation-play-state:paused}
+@keyframes reelscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.shot{position:relative;flex:0 0 auto;width:clamp(250px,29vw,400px);aspect-ratio:3/2;overflow:hidden;margin:0}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 11px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:#fff;line-height:1.35;
+  background:linear-gradient(to top,rgba(4,26,14,.88),rgba(4,26,14,.55) 55%,transparent)}
+.reel-badge{position:absolute;top:0;left:0;z-index:2;background:var(--green);color:#fff;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px}
+@media (prefers-reduced-motion:reduce){
+  .reel{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .reel-track{animation:none}
+}
+
+.legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:12px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--ink-60)}
+.legend li{display:flex;align-items:center;gap:7px}
+.sw{width:16px;height:10px;flex:0 0 auto}
+.sw-fixed{background:var(--ink)}
+.sw-on{background:var(--green);opacity:.8}
+.sw-off{border:1.2px dashed var(--green);opacity:.7}
+
+.reviews{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);
+          mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.rev-track{display:flex;width:max-content;animation:revscroll 58s linear infinite}
+.reviews:hover .rev-track,.reviews:focus-within .rev-track{animation-play-state:paused}
+@keyframes revscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rev{flex:0 0 auto;width:clamp(280px,32vw,400px);padding:20px 26px;border-right:1px solid var(--line)}
+.rev q{display:block;font-size:15.5px;line-height:1.5;quotes:none}
+.rev q::before{content:"\201C";color:var(--green);font-family:var(--display);font-weight:800;font-size:20px;margin-right:2px}
+.rev cite{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-60);font-style:normal}
+@media (prefers-reduced-motion:reduce){
+  .reviews{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .rev-track{animation:none}
+}
+.req{color:var(--green);margin-left:3px;font-weight:600}
+.req-note{grid-column:1/-1;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-60);margin-top:-4px}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="National Basketball Arena, home">
+      <svg class="mark" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#0B7C42"/>
+        <g clip-path="url(#ballClipS)">
+          <circle cx="50" cy="50" r="34" fill="#fff"/>
+          <g stroke="#0B7C42" fill="none" stroke-linecap="butt">
+            <path d="M34 16 C 20 34, 20 66, 34 84" stroke-width="2.2"/>
+            <path d="M42 15 C 32 34, 32 66, 42 85" stroke-width="2.6"/>
+            <path d="M50 15 C 46 34, 46 66, 50 85" stroke-width="3"/>
+            <path d="M58 15 C 60 34, 60 66, 58 85" stroke-width="3.4"/>
+            <path d="M66 16 C 74 34, 74 66, 66 84" stroke-width="3.8"/>
+            <path d="M74 20 C 86 36, 86 64, 74 80" stroke-width="4.2"/>
+            <path d="M80 25 C 94 38, 94 62, 80 75" stroke-width="4.6"/>
+          </g>
+        </g>
+        <defs><clipPath id="ballClipS"><circle cx="50" cy="50" r="34"/></clipPath></defs>
+      </svg>
+      <b>National<br>Basketball Arena<span>Tymon Park · Dublin 24</span></b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="#spaces">Spaces</a>
+      <a href="#spec">Technical</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="calendar.html">Availability</a>
+    </nav>
+    <a class="btn" href="#enquire">Contact us</a>
+  </div>
+</header>
+<section class="reel" aria-label="The arena in use">
+  <span class="reel-badge">One floor, seven ways</span>
+  <div class="reel-track"><figure class="shot"><img src="images/arena-exterior.jpg" width="620" height="413" alt="Tymon Park, straight off Junction 11" decoding="async" loading="eager" fetchpriority="high"><figcaption>Tymon Park, straight off Junction 11</figcaption></figure><figure class="shot"><img src="images/court-full.jpg" width="900" height="600" alt="Full FIBA court, bleachers extended" decoding="async" loading="eager" fetchpriority="high"><figcaption>Full FIBA court, bleachers extended</figcaption></figure><figure class="shot"><img src="images/combat-sports.jpg" width="900" height="600" alt="Combat sports, matted floor" decoding="async" loading="lazy"><figcaption>Combat sports, matted floor</figcaption></figure><figure class="shot"><img src="images/state-exams.jpg" width="516" height="344" alt="State exams across the full floor" decoding="async" loading="lazy"><figcaption>State exams across the full floor</figcaption></figure><figure class="shot"><img src="images/exhibition.jpg" width="730" height="486" alt="Exhibition stands, doors open to the public" decoding="async" loading="lazy"><figcaption>Exhibition stands, doors open to the public</figcaption></figure><figure class="shot"><img src="images/conference.jpg" width="415" height="277" alt="Conference, theatre-style to a stage" decoding="async" loading="lazy"><figcaption>Conference, theatre-style to a stage</figcaption></figure><figure class="shot"><img src="images/match-day.jpg" width="675" height="450" alt="International fixture, a full house" decoding="async" loading="lazy"><figcaption>International fixture, a full house</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/arena-exterior.jpg" width="620" height="413" alt="" decoding="async" loading="lazy"><figcaption>Tymon Park, straight off Junction 11</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/court-full.jpg" width="900" height="600" alt="" decoding="async" loading="lazy"><figcaption>Full FIBA court, bleachers extended</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/combat-sports.jpg" width="900" height="600" alt="" decoding="async" loading="lazy"><figcaption>Combat sports, matted floor</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/state-exams.jpg" width="516" height="344" alt="" decoding="async" loading="lazy"><figcaption>State exams across the full floor</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/exhibition.jpg" width="730" height="486" alt="" decoding="async" loading="lazy"><figcaption>Exhibition stands, doors open to the public</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/conference.jpg" width="415" height="277" alt="" decoding="async" loading="lazy"><figcaption>Conference, theatre-style to a stage</figcaption></figure><figure class="shot" aria-hidden="true"><img src="images/match-day.jpg" width="675" height="450" alt="" decoding="async" loading="lazy"><figcaption>International fixture, a full house</figcaption></figure></div>
+</section>
+
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Venue hire · South Dublin</p>
+      <h1>Ireland&rsquo;s premier<br><em>indoor sport arena</em></h1>
+      <p class="deck">18,000 sq ft that changes shape</p>
+      <p class="lede">One flat floor, straight off the M50, that has been a trade fair on Friday, an exam hall on Saturday and a EuroBasket qualifier on Sunday. Pick a layout and see what you get.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#enquire">Enquire</a>
+        <a class="btn btn-ghost" href="calendar.html">See available dates</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>2,500</b><span>Max capacity</span></div>
+        <div class="stat"><b>500</b><span>Free parking spaces</span></div>
+        <div class="stat"><b>J11</b><span>M50 exit</span></div>
+      </div>
+    </div>
+
+    <!-- signature element: the reconfiguring floor plan -->
+    <div class="plan-panel" id="floor">
+      <div class="plan-head">
+        <h2>Main arena — plan view</h2>
+        <p class="hint">Scale 50m × 33m</p>
+      </div>
+
+      <div class="modes" role="tablist" aria-label="Floor configuration">
+        <button class="mode" role="tab" aria-selected="true"  data-mode="basketball">Basketball</button>
+        <button class="mode" role="tab" aria-selected="false" data-mode="exhibition">Exhibition</button>
+        <button class="mode" role="tab" aria-selected="false" data-mode="conference">Conference</button>
+        <button class="mode" role="tab" aria-selected="false" data-mode="exams">Exams</button>
+        <button class="mode" role="tab" aria-selected="false" data-mode="concert">Concert</button>
+      </div>
+
+      <div class="plan-figure">
+        <svg viewBox="0 0 780 560" role="img" aria-labelledby="planTitle planDesc">
+          <title id="planTitle">Floor plan of the main arena</title>
+          <desc id="planDesc">A scale plan of the main arena. Screens, media gantry, main entrance and dock door are permanent. The four seating blocks are retractable and are shown deployed or retracted according to the selected configuration.</desc>
+
+          <g id="shell">
+            <rect x="40" y="46" width="700" height="462" fill="#F4F7F5" stroke="#10161A" stroke-width="2"/>
+
+            <!-- retractable seating footprints -->
+            <g fill="none" stroke="#0B7C42" stroke-width="1.1" stroke-dasharray="5 4" opacity=".5">
+              <rect x="194" y="60"  width="392" height="90"/>
+              <rect x="194" y="400" width="392" height="78"/>
+              <rect x="52"  y="150" width="84"  height="190"/>
+              <rect x="644" y="150" width="84"  height="190"/>
+            </g>
+
+            <!-- PERMANENT: LED screens, corner-mounted on opposing diagonals -->
+            <g stroke="#10161A" stroke-width="10" stroke-linecap="round">
+              <path d="M58 424 L124 486"/>
+              <path d="M722 130 L656 68"/>
+            </g>
+            <text x="150" y="470" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#10161A">LED 15m²</text>
+            <text x="630" y="92" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#10161A" text-anchor="end">LED 15m²</text>
+
+            <!-- PERMANENT: media / production gantry -->
+            <rect x="326" y="484" width="128" height="20" fill="#10161A"/>
+            <text x="390" y="498" font-family="IBM Plex Mono, monospace" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1">MEDIA GANTRY</text>
+
+            <!-- PERMANENT: main entrance, left wall -->
+            <rect x="34" y="420" width="12" height="76" fill="#fff" stroke="#10161A" stroke-width="2"/>
+            <path d="M34 420 L10 404 M34 496 L10 512" stroke="#9AA3AE" stroke-width="1.4"/>
+            <text x="21" y="458" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#10161A" text-anchor="middle" transform="rotate(-90 21 458)">MAIN ENTRANCE</text>
+
+            <!-- PERMANENT: dock door, right wall, opposite the entrance -->
+            <rect x="734" y="420" width="12" height="76" fill="#fff" stroke="#10161A" stroke-width="2"/>
+            <path d="M746 420 L770 404 M746 496 L770 512" stroke="#9AA3AE" stroke-width="1.4"/>
+            <text x="759" y="458" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="#10161A" text-anchor="middle" transform="rotate(90 759 458)">DOCK DOOR</text>
+
+            <g stroke="#B4BDC2" stroke-width="1.2" id="rig"></g>
+            <g id="power"></g>
+
+            <path d="M40 528 L740 528" stroke="#B4BDC2" stroke-width="1"/>
+            <path d="M40 522 L40 534 M740 522 L740 534" stroke="#B4BDC2" stroke-width="1"/>
+            <rect x="352" y="519" width="76" height="18" fill="#fff"/>
+            <text x="390" y="532" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#55606A" text-anchor="middle">50 m</text>
+          </g>
+
+          <!-- BASKETBALL — FIBA 28 x 15 m -->
+          <g class="mode-layer is-on" id="m-basketball">
+            <g id="seats-basketball"></g>
+            <rect x="194" y="172" width="392" height="210" fill="#C4863C"/>
+            <g fill="none" stroke="#fff" stroke-width="2.2">
+              <rect x="194" y="172" width="392" height="210"/>
+              <path d="M390 172 V382"/>
+              <circle cx="390" cy="277" r="25.2"/>
+              <!-- left end -->
+              <rect x="194" y="242.7" width="81.2" height="68.6"/>
+              <path d="M275.2 251.8 A 25.2 25.2 0 0 1 275.2 302.2"/>
+              <path d="M194 184.6 H 235.9 A 94.5 94.5 0 0 1 235.9 369.4 H 194"/>
+              <path d="M216 259.5 A 17.5 17.5 0 0 1 216 294.5"/>
+              <path d="M210.8 264.4 V 289.6"/>
+              <circle cx="216" cy="277" r="3.2"/>
+              <!-- right end -->
+              <rect x="504.8" y="242.7" width="81.2" height="68.6"/>
+              <path d="M504.8 302.2 A 25.2 25.2 0 0 1 504.8 251.8"/>
+              <path d="M586 184.6 H 544.1 A 94.5 94.5 0 0 0 544.1 369.4 H 586"/>
+              <path d="M564 259.5 A 17.5 17.5 0 0 0 564 294.5"/>
+              <path d="M569.2 264.4 V 289.6"/>
+              <circle cx="564" cy="277" r="3.2"/>
+            </g>
+          </g>
+
+          <g class="mode-layer" id="m-exhibition">
+            <g id="seats-exhibition"></g>
+            <g id="stands"></g>
+            <path d="M132 450 H726" stroke="#0B7C42" stroke-width="1.6" stroke-dasharray="7 5"/>
+            <rect x="298" y="439" width="184" height="20" fill="#F4F7F5"/>
+            <text x="390" y="454" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#0B7C42" text-anchor="middle">MAIN AISLE — DOOR TO DOCK</text>
+          </g>
+
+          <g class="mode-layer" id="m-conference">
+            <g id="seats-conference"></g>
+            <rect x="180" y="66" width="420" height="54" fill="#10161A"/>
+            <text x="390" y="99" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle" letter-spacing="2">STAGE</text>
+            <g id="rows"></g>
+          </g>
+
+          <g class="mode-layer" id="m-exams">
+            <g id="seats-exams"></g>
+            <g id="desks"></g>
+          </g>
+
+          <g class="mode-layer" id="m-concert">
+            <g id="seats-concert"></g>
+            <rect x="150" y="60" width="480" height="66" fill="#10161A"/>
+            <text x="390" y="99" font-family="IBM Plex Mono, monospace" font-size="12" fill="#fff" text-anchor="middle" letter-spacing="2">STAGE + RIG</text>
+            <rect x="150" y="150" width="480" height="230" fill="#0B7C42" opacity=".12" stroke="#0B7C42" stroke-width="1.4" stroke-dasharray="6 5"/>
+            <text x="390" y="272" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0B7C42" text-anchor="middle" letter-spacing="2">STANDING FLOOR</text>
+          </g>
+        </svg>
+      </div>
+
+      <ul class="legend">
+        <li><span class="sw sw-fixed"></span>Permanent — screens, gantry, entrance, dock</li>
+        <li><span class="sw sw-on"></span>Seating deployed</li>
+        <li><span class="sw sw-off"></span>Seating retracted</li>
+      </ul>
+      <div class="plan-read">
+        <div><span>Seated</span><b id="rSeat">1,500</b></div>
+        <div><span>Clear floor</span><b id="rFloor">4,520 sq ft</b></div>
+      </div>
+      <p class="plan-note" id="rNote">Full-size FIBA court with retractable bleachers extended on both sidelines. The stage for EuroBasket qualifiers and National Cup finals.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SPACES ============ -->
+<section id="spaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Three spaces, one building</p>
+      <h2>Book the floor, a suite, or the whole place</h2>
+      <p>Rooms can run in parallel — a plenary in the arena, workshops in the suite, and six changing rooms that double as breakout space.</p>
+    </div>
+    <div class="spaces">
+      <article class="space">
+        <h3>Main arena</h3>
+        <p class="sqft">18,000 SQ FT</p>
+        <p>Exhibitions, conferences, concerts, exams and sport. Retractable bleacher seating pulls back to leave the full floor clear.</p>
+        <dl>
+          <dt>Seated</dt><dd>1,500</dd>
+          <dt>Total</dt><dd>2,500</dd>
+          <dt>Access</dt><dd>Multiple entry points</dd>
+        </dl>
+      </article>
+      <article class="space">
+        <h3>Hospitality suite</h3>
+        <p class="sqft">1,600 SQ FT</p>
+        <p>Workshops, receptions, press and catering. Works as a standalone room or as the front-of-house for an arena event.</p>
+        <dl>
+          <dt>Capacity</dt><dd>100</dd>
+          <dt>AV</dt><dd>Projector, screen, 32&quot; TV</dd>
+          <dt>Catering</dt><dd>Available</dd>
+        </dl>
+      </article>
+      <article class="space">
+        <h3>Boardroom</h3>
+        <p class="sqft">286 SQ FT</p>
+        <p>Meetings, seminars and interviews. Set up for hybrid from the room rather than from a laptop on the table.</p>
+        <dl>
+          <dt>Capacity</dt><dd>20</dd>
+          <dt>AV</dt><dd>64&quot; smart TV</dd>
+          <dt>Hybrid</dt><dd>Video conferencing</dd>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPEC ============ -->
+<section id="spec">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">For production teams</p>
+      <h2>Technical spec</h2>
+      <p>The numbers your production manager will ask for first. A full spec pack with floor plans and rigging drawings is available on request.</p>
+    </div>
+    <div class="spec">
+      <div>
+        <h3>Vision &amp; sound</h3>
+        <ul>
+          <li><b>Screens</b><span>Two fixed 15m² LED screens, corner-mounted on opposing diagonals</span></li>
+          <li><b>Playback</b><span>House media server</span></li>
+          <li><b>Audio</b><span>In-house PA covering the full floor</span></li>
+          <li><b>Gantry</b><span>Permanent media and production gantry on the south side</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Power &amp; rigging</h3>
+        <ul>
+          <li><b>Power</b><span>Three-phase supply at several floor positions</span></li>
+          <li><b>Rigging</b><span>Multiple certified rigging points overhead</span></li>
+          <li><b>Floor</b><span>Flat, level, single-storey — no lift constraints</span></li>
+          <li><b>Cover</b><span>Floor protection for non-sport events</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Access &amp; back of house</h3>
+        <ul>
+          <li><b>Load-in</b><span>Shuttered dock door straight across the floor from the main entrance</span></li>
+          <li><b>Breakout</b><span>Six changing rooms, usable as breakout rooms</span></li>
+          <li><b>Parking</b><span>500 free spaces, including crew and artic parking</span></li>
+          <li><b>Derig</b><span>Same-night derig by arrangement</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOT FOR PROFIT ============ -->
+<section class="npo">
+  <div class="wrap">
+    <h2>Every booking pays for a court somewhere else</h2>
+    <p>The Arena is a not-for-profit venue owned and run by Basketball Ireland. Income from hire goes straight back into the game — grassroots clubs, schools competitions, underage squads and the national teams. Your event budget does a second job.</p>
+  </div>
+</section>
+
+<!-- ============ GETTING HERE ============ -->
+<section id="here">
+  <div class="wrap here">
+    <div>
+      <p class="eyebrow">Getting here</p>
+      <h2>Easier to reach than town, and you can park</h2>
+      <ul>
+        <li><b>M50</b><span>Junction 11, straight into Tymon Park — no city-centre traffic and no loading restrictions</span></li>
+        <li><b>500</b><span>Free on-site spaces, so delegates and exhibitors are not hunting for a car park</span></li>
+        <li><b>Luas</b><span>Red Line to Tallaght, then a short local connection</span></li>
+        <li><b>Access</b><span>Level access throughout, with accessible parking closest to the doors</span></li>
+      </ul>
+    </div>
+    <div class="addr">
+      <p class="eyebrow">Find us</p>
+      <p>National Basketball Arena<br>Tymon Park, Dublin<br><span class="code">D24 N449</span></p>
+      <a href="tel:+35314590211">+353 1 459 0211</a>
+      <a href="mailto:arenabookings@ireland.basketball">arenabookings@ireland.basketball</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-label="What people say about the Arena"><div class="rev-track"><figure class="rev"><q>The atmosphere when it&rsquo;s full is like nothing else in Irish indoor sport.</q><cite>Club coach, Dublin</cite></figure><figure class="rev"><q>Sightlines are superb. There genuinely isn&rsquo;t a bad seat in the place.</q><cite>Season ticket holder</cite></figure><figure class="rev"><q>Load-in to fully set up in under two hours. The crew know the building.</q><cite>Exhibition organiser</cite></figure><figure class="rev"><q>Bright, warm and spotless, and the floor is in beautiful condition.</q><cite>Visiting team manager</cite></figure><figure class="rev"><q>The easiest venue in Dublin to get to, and parking is never a worry.</q><cite>Conference producer</cite></figure><figure class="rev"><q>Noise stays in the room. It feels like a proper national arena.</q><cite>Supporter, Cork</cite></figure><figure class="rev" aria-hidden="true"><q>The atmosphere when it&rsquo;s full is like nothing else in Irish indoor sport.</q><cite>Club coach, Dublin</cite></figure><figure class="rev" aria-hidden="true"><q>Sightlines are superb. There genuinely isn&rsquo;t a bad seat in the place.</q><cite>Season ticket holder</cite></figure><figure class="rev" aria-hidden="true"><q>Load-in to fully set up in under two hours. The crew know the building.</q><cite>Exhibition organiser</cite></figure><figure class="rev" aria-hidden="true"><q>Bright, warm and spotless, and the floor is in beautiful condition.</q><cite>Visiting team manager</cite></figure><figure class="rev" aria-hidden="true"><q>The easiest venue in Dublin to get to, and parking is never a worry.</q><cite>Conference producer</cite></figure><figure class="rev" aria-hidden="true"><q>Noise stays in the room. It feels like a proper national arena.</q><cite>Supporter, Cork</cite></figure></div></section>
+
+<!-- ============ ENQUIRE ============ -->
+<section id="enquire">
+  <div class="wrap enq">
+    <div>
+      <p class="eyebrow">Enquire</p>
+      <h2>Tell us the date and we&rsquo;ll tell you if it&rsquo;s free</h2>
+      <p style="margin-top:16px;color:var(--ink-60)">We answer every enquiry within one working day with availability, an indicative cost and a plan for your layout. No booking fee to ask.</p>
+    </div>
+
+    <form id="enquiryForm" novalidate>
+      <div class="field"><label for="f-name">Your name<span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" required autocomplete="name"></div>
+      <div class="field"><label for="f-org">Organisation</label><input id="f-org" name="organisation" autocomplete="organization"></div>
+      <div class="field"><label for="f-email">Email<span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="field"><label for="f-type">Event type</label>
+        <select id="f-type" name="eventType">
+          <option>Exhibition or trade fair</option>
+          <option>Conference</option>
+          <option>Exams or assessment</option>
+          <option>Concert or performance</option>
+          <option>Sporting event</option>
+          <option>Meeting or workshop</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-space">Space</label>
+        <select id="f-space" name="space">
+          <option>Main arena</option>
+          <option>Hospitality suite</option>
+          <option>Boardroom</option>
+          <option>Whole venue</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-date">Preferred date<span class="req" aria-hidden="true">*</span></label><input id="f-date" name="date" type="date" required></div>
+      <div class="field"><label for="f-people">Expected attendance</label><input id="f-people" name="attendance" type="number" min="1" inputmode="numeric" placeholder="e.g. 400"></div>
+      <div class="field full"><label for="f-notes">Anything we should know</label><textarea id="f-notes" name="notes" placeholder="Load-in times, power needs, layout, catering&hellip;"></textarea></div>
+      <label class="consent full" for="f-consent">
+        <input id="f-consent" name="consent" type="checkbox" required>
+        <span>I&rsquo;m happy for the Arena to contact me about this enquiry. We keep your details only as long as needed to answer it — see our privacy notice.</span>
+      </label>
+      <p class="req-note">* Required</p>
+      <div class="field full"><button class="btn" type="submit">Send enquiry</button></div>
+      <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <svg class="mark" width="88" height="88" viewBox="0 0 100 100" aria-hidden="true" style="margin-bottom:16px">
+        <rect width="100" height="100" fill="#0B7C42"/>
+        <g clip-path="url(#ballClipF)">
+          <circle cx="50" cy="50" r="34" fill="#fff"/>
+          <g stroke="#0B7C42" fill="none">
+            <path d="M34 16 C 20 34, 20 66, 34 84" stroke-width="2.2"/>
+            <path d="M42 15 C 32 34, 32 66, 42 85" stroke-width="2.6"/>
+            <path d="M50 15 C 46 34, 46 66, 50 85" stroke-width="3"/>
+            <path d="M58 15 C 60 34, 60 66, 58 85" stroke-width="3.4"/>
+            <path d="M66 16 C 74 34, 74 66, 66 84" stroke-width="3.8"/>
+            <path d="M74 20 C 86 36, 86 64, 74 80" stroke-width="4.2"/>
+            <path d="M80 25 C 94 38, 94 62, 80 75" stroke-width="4.6"/>
+          </g>
+        </g>
+        <defs><clipPath id="ballClipF"><circle cx="50" cy="50" r="34"/></clipPath></defs>
+      </svg>
+      <h4>National Basketball Arena</h4>
+      <p style="font-size:15px;line-height:1.6;opacity:.85">Tymon Park, Dublin, D24 N449<br>+353 1 459 0211<br>arenabookings@ireland.basketball</p>
+    </div>
+    <div>
+      <h4>Hire the venue</h4>
+      <a href="calendar.html">Availability</a>
+      <a href="#spaces">Spaces</a>
+      <a href="#spec">Technical spec</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="#enquire">Check a date</a>
+    </div>
+    <div>
+      <h4>Basketball</h4>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="https://ireland.basketball/tickets">Tickets</a>
+      <a href="https://ireland.basketball/internationalfixtures">Fixtures</a>
+      <a href="https://ireland.basketball/find-us">Find us</a>
+      <a href="https://ireland.basketball/">Basketball Ireland</a>
+    </div>
+    <div class="colophon">
+      <span>A not-for-profit venue owned by Basketball Ireland</span>
+      <span>Privacy · Accessibility</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+
+  var rig=document.getElementById("rig");
+  for(var rx=120;rx<=660;rx+=90){
+    for(var ry=110;ry<=450;ry+=85){
+      rig.appendChild(el("path",{d:"M"+(rx-4)+" "+ry+" h8 M"+rx+" "+(ry-4)+" v8"}));
+    }
+  }
+  var pw=document.getElementById("power");
+  [[70,80],[70,380],[710,80],[710,380],[390,466]].forEach(function(p){
+    pw.appendChild(el("circle",{cx:p[0],cy:p[1],r:5,fill:"none",stroke:"#55606A","stroke-width":1.3}));
+    var t=el("text",{x:p[0],y:p[1]+3.4,"font-family":"IBM Plex Mono, monospace","font-size":7,fill:"#55606A","text-anchor":"middle"});
+    t.textContent="3\u03A6"; pw.appendChild(t);
+  });
+
+  /* Four retractable seating blocks. "near" is the side closest to the floor,
+     so the tier shading always darkens toward the action. */
+  var BLOCKS={
+    north:{x:194,y:60, w:392,h:90, axis:"y",near:"max"},
+    south:{x:194,y:400,w:392,h:78, axis:"y",near:"min"},
+    west :{x:52, y:150,w:84, h:190,axis:"x",near:"max"},
+    east :{x:644,y:150,w:84, h:190,axis:"x",near:"min"}
+  };
+  var DEPLOY={
+    basketball:["north","south","west","east"],
+    exhibition:[],
+    conference:[],
+    exams:[],
+    concert:["south","west","east"]
+  };
+  function tiers(g,b){
+    var n=5,i,r;
+    for(i=0;i<n;i++){
+      if(b.axis==="y"){
+        var th=b.h/n, yy=(b.near==="max")? b.y+i*th : b.y+b.h-(i+1)*th;
+        r={x:b.x,y:yy+0.6,width:b.w,height:th-1.2};
+      }else{
+        var tw=b.w/n, xx=(b.near==="max")? b.x+i*tw : b.x+b.w-(i+1)*tw;
+        r={x:xx+0.6,y:b.y,width:tw-1.2,height:b.h};
+      }
+      r.fill="#0B7C42"; r.opacity=(0.40+i*0.14).toFixed(2);
+      g.appendChild(el("rect",r));
+    }
+  }
+  Object.keys(DEPLOY).forEach(function(mode){
+    var g=document.getElementById("seats-"+mode);
+    DEPLOY[mode].forEach(function(k){ tiers(g,BLOCKS[k]); });
+  });
+
+  var st=document.getElementById("stands");
+  [90,210,330].forEach(function(y){
+    for(var c=0;c<11;c++){
+      if(y===90&&c===10)continue;          /* clipped by the top-right screen */
+      var x=68+c*60;
+      st.appendChild(el("rect",{x:x,y:y,width:48,height:82,fill:"#fff",stroke:"#10161A","stroke-width":1.3}));
+      st.appendChild(el("rect",{x:x,y:y,width:48,height:7,fill:"#0B7C42"}));
+    }
+  });
+
+  var rows=document.getElementById("rows");
+  for(var ri=0;ri<12;ri++){
+    var w=470+ri*8, y2=150+ri*26;
+    rows.appendChild(el("rect",{x:390-w/2,y:y2,width:w,height:13,rx:2,fill:"#0B7C42",opacity:.68}));
+  }
+
+  var dk=document.getElementById("desks");
+  for(var dr=0;dr<9;dr++){
+    for(var dc=0;dc<16;dc++){
+      if((dr===0&&dc===15)||(dr===8&&dc===0))continue;   /* corner screens */
+      dk.appendChild(el("rect",{x:70+dc*41,y:100+dr*42,width:26,height:19,fill:"none",stroke:"#10161A","stroke-width":1.1}));
+    }
+  }
+
+  var DATA={
+    basketball:{seat:"1,500",floor:"4,520 sq ft",note:"Full FIBA court, 28 × 15 m, with all four seating blocks deployed. The stage for EuroBasket qualifiers and National Cup finals."},
+    exhibition:{seat:"—",floor:"18,000 sq ft",note:"All seating retracted for maximum floor. Thirty-two 3 × 5 m shell stands off a main aisle running door to dock, with room to go wider."},
+    conference:{seat:"1,500",floor:"18,000 sq ft",note:"Seating retracted, loose theatre rows to a full-width stage. Corner screens sit on opposite diagonals, so no seat is far from one. Six changing rooms convert to breakout space for parallel sessions."},
+    exams:{seat:"142",floor:"18,000 sq ft",note:"Seating fully retracted for 142 spaced desks on a clear, level floor with clean sightlines for invigilators. Regularly used for state and professional assessments."},
+    concert:{seat:"1,000",floor:"18,000 sq ft",note:"Standing floor with three seating blocks deployed and the north block struck for the stage. Multiple rigging points overhead."}
+  };
+  var tabs=[].slice.call(document.querySelectorAll(".mode"));
+  var seat=document.getElementById("rSeat"),
+      flr=document.getElementById("rFloor"),note=document.getElementById("rNote");
+
+  function show(mode){
+    tabs.forEach(function(t){t.setAttribute("aria-selected",String(t.dataset.mode===mode));});
+    [].forEach.call(document.querySelectorAll(".mode-layer"),function(l){
+      l.classList.toggle("is-on",l.id==="m-"+mode);
+    });
+    var d=DATA[mode];
+    seat.textContent=d.seat; flr.textContent=d.floor; note.textContent=d.note;
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener("click",function(){show(t.dataset.mode);});
+    t.addEventListener("keydown",function(e){
+      var n=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;
+      if(!n)return;
+      e.preventDefault();
+      var next=tabs[(i+n+tabs.length)%tabs.length];
+      next.focus(); show(next.dataset.mode);
+    });
+  });
+
+  show("basketball");
+
+  var mb=document.getElementById("menuBtn"),nv=document.getElementById("nav");
+  mb.addEventListener("click",function(){
+    var open=nv.classList.toggle("open");
+    mb.setAttribute("aria-expanded",String(open));
+    mb.textContent=open?"Close":"Menu";
+  });
+
+  /* Enquiry form — point ENDPOINT at the n8n production webhook.
+     Workflow: Webhook -> Set -> Gmail (arenabookings@) + Google Sheets log
+                              -> Gmail (auto-acknowledgement to enquirer) */
+  /* TEST url: only listens after you click "Test workflow" in n8n, and only once.
+     For go-live change "/webhook-test/" to "/webhook/" and activate the workflow. */
+  /* TEST url - only listens after you click "Test workflow" in n8n, for one request.
+     Before going live, swap /webhook-test/ for /webhook/ and activate the workflow:
+     https://mcgeeweb.app.n8n.cloud/webhook/arena-enquiry */
+  var ENDPOINT="https://mcgeeweb.app.n8n.cloud/webhook-test/arena-enquiry";
+  var form=document.getElementById("enquiryForm"),msg=document.getElementById("formMsg");
+
+  /* a free day on calendar.html links here as ?date=YYYY-MM-DD#enquire */
+  var qd=(location.search.match(/[?&]date=(\d{4}-\d{2}-\d{2})/)||[])[1];
+  if(qd){
+    var df=document.getElementById("f-date");
+    if(df){
+      df.value=qd;
+      msg.className="form-msg ok";
+      msg.textContent="Date carried over from the availability calendar. Add your details and send.";
+      var nf=document.getElementById("f-name"); if(nf)nf.focus({preventScroll:true});
+    }
+  }
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    msg.className="form-msg";
+    if(!form.checkValidity()){
+      msg.className="form-msg err";
+      msg.textContent="Add your name, email, preferred date and consent, then send again.";
+      var bad=form.querySelector(":invalid"); if(bad)bad.focus();
+      return;
+    }
+    var payload={}; new FormData(form).forEach(function(v,k){payload[k]=v;});
+    payload.submittedAt=new Date().toISOString();
+    if(!ENDPOINT){
+      msg.className="form-msg ok";
+      msg.textContent="Demo mode — the enquiry is not sent yet. Set ENDPOINT to the n8n webhook to go live.";
+      console.log("Enquiry payload:",payload);
+      return;
+    }
+    fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})
+      .then(function(r){ if(!r.ok) throw new Error(r.status);
+        msg.className="form-msg ok";
+        msg.textContent="Enquiry received. We'll come back to you within one working day.";
+        form.reset();
+      })
+      .catch(function(){
+        msg.className="form-msg err";
+        msg.textContent="That didn't send. Email arenabookings@ireland.basketball or call +353 1 459 0211.";
+      });
+  });
+})();
+</script>
+</body>
+</html>

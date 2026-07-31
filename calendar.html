@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Availability &mdash; National Basketball Arena</title>
+<meta name="description" content="Check which dates are free at the National Basketball Arena and enquire about the day you need.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0B7C42; --green-dk:#06582F; --green-lt:#E7F1EA;
+  --ink:#10161A; --ink-60:#55606A; --line:#DCE2E0;
+  --paper:#FFFFFF; --paper-2:#F4F7F5; --maple:#C4863C; --red:#C3341F; --red-lt:#FBE6E2;
+  --display:"Outfit",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em;text-transform:uppercase}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+.mark{display:block;flex-shrink:0}
+.masthead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;gap:26px;height:76px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.18}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ink-60);font-weight:400;text-transform:none}
+nav{margin-left:auto;display:flex;gap:24px}
+nav a{font-size:14px;text-decoration:none;color:var(--ink-60);font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:.15s}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--green)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--green)}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:15px;background:var(--green);color:#fff;text-decoration:none;padding:12px 22px;border:0;cursor:pointer;transition:.15s;text-align:center}
+.btn:hover,.btn:focus-visible{background:var(--green-dk)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+.page-head{padding:clamp(40px,6vw,68px) 0 clamp(28px,4vw,44px)}
+.page-head h1{font-size:clamp(34px,4.6vw,58px);font-weight:800;margin-top:16px}
+.page-head p{margin-top:18px;color:var(--ink-60);max-width:56ch}
+.page-head .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+footer{background:var(--ink);color:#fff;padding:56px 0 34px;margin-top:clamp(56px,7vw,96px)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8A959C;margin-bottom:14px;font-weight:400}
+footer a{display:block;color:#fff;text-decoration:none;font-size:14.5px;padding:5px 0;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.colophon{grid-column:1/-1;border-top:1px solid #262E34;margin-top:24px;padding-top:20px;font-family:var(--mono);font-size:11px;color:#8A959C;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:920px){
+  footer .wrap{grid-template-columns:1fr 1fr}
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);z-index:60}
+  nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .masthead .btn{display:none}
+}
+
+.ev-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;
+  padding:4px 9px;color:#fff;background:var(--green)}
+.tag-sport{background:#57A97B}.tag-conf{background:var(--ink)}.tag-expo{background:var(--maple)}
+.tag-private{background:#B7BFBC;color:var(--ink)}
+.tix{border:1px solid var(--line);background:var(--paper-2);padding:18px;display:flex;flex-direction:column;gap:14px}
+.tix-price{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.tix-price span{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-60)}
+.tix-price b{font-family:var(--display);font-weight:800;font-size:30px;line-height:1}
+.tix .btn{width:100%}
+.tix.out{background:var(--red-lt);border-color:var(--red)}
+.tix.out .tix-price span{color:var(--red)}
+.tix.out .tix-price b{color:var(--red);text-decoration:line-through;text-decoration-thickness:2px;text-underline-offset:3px}
+.soldout{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--display);font-weight:800;
+  font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:13px 10px;text-align:center;cursor:not-allowed}
+
+.legend-row{display:flex;flex-wrap:wrap;gap:10px 22px;padding:20px 0 0;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-60)}
+.legend-row li{list-style:none;display:flex;align-items:center;gap:8px}
+.key{width:15px;height:15px;flex:0 0 auto;border:1px solid var(--line)}
+.key-free{background:#fff}.key-bball{background:var(--green)}.key-sport{background:#57A97B}
+.key-conf{background:var(--ink)}.key-expo{background:var(--maple)}.key-private{background:#B7BFBC}
+.months{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:clamp(28px,4vw,52px);padding:clamp(32px,4vw,48px) 0}
+.cal h2{font-size:20px;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:12px}
+.dow{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);text-align:center;padding:6px 0}
+.day{position:relative;min-height:74px;border:1px solid var(--line);padding:5px 6px;font-size:12px;
+  display:block;text-decoration:none;text-align:left;font-family:inherit;color:inherit;background:#fff;width:100%}
+.day .n{font-family:var(--mono);font-size:11px;color:var(--ink-60);display:block}
+.day.pad{border-color:transparent;background:transparent}
+a.day.free:hover,a.day.free:focus-visible{background:var(--green-lt);border-color:var(--green)}
+a.day.free .go{position:absolute;left:6px;right:6px;bottom:6px;font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--green);opacity:0;transition:.15s}
+a.day.free:hover .go,a.day.free:focus-visible .go{opacity:1}
+button.day.busy{cursor:pointer;color:#fff;transition:.15s}
+button.day.busy:hover,button.day.busy:focus-visible{filter:brightness(1.12)}
+.day.busy .n{color:rgba(255,255,255,.75)}
+.day.busy .ev{display:block;margin-top:4px;font-size:11px;line-height:1.25;font-weight:500}
+.cat-bball{background:var(--green);border-color:var(--green)}
+.cat-sport{background:#57A97B;border-color:#57A97B}
+.cat-conf{background:var(--ink);border-color:var(--ink)}
+.cat-expo{background:var(--maple);border-color:var(--maple)}
+.cat-private{background:#B7BFBC;border-color:#B7BFBC}
+.cat-private .ev,.cat-private .n{color:var(--ink)!important}
+.cal-foot{border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.cal-foot p{color:var(--ink-60);font-size:15.5px}
+/* event detail dialog */
+dialog.ev-dlg{border:0;padding:0;width:min(520px,calc(100% - 32px));background:#fff;color:var(--ink);
+  box-shadow:0 24px 70px rgba(16,22,26,.3)}
+dialog.ev-dlg::backdrop{background:rgba(16,22,26,.55)}
+.dlg-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  padding:20px 22px;border-bottom:1px solid var(--line)}
+.dlg-date{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60)}
+.dlg-close{background:none;border:1px solid var(--line);font-family:var(--mono);font-size:11px;
+  letter-spacing:.08em;padding:7px 11px;cursor:pointer;flex:0 0 auto}
+.dlg-close:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.dlg-body{padding:22px}
+.dlg-body h3{font-size:22px;text-transform:none;letter-spacing:-.005em;margin-top:11px}
+.dlg-when{font-family:var(--mono);font-size:11.5px;color:var(--ink-60);margin-top:8px}
+.dlg-body p.blurb{margin-top:14px;font-size:15.5px;color:var(--ink-60)}
+.dlg-body .tix{margin-top:20px}
+.dlg-more{display:block;margin-top:16px;font-size:14px;color:var(--green);font-weight:600}
+@media (max-width:720px){.cal-foot{grid-template-columns:1fr}.day{min-height:60px}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="National Basketball Arena, home">
+      <svg class="mark" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#0B7C42"/>
+        <g clip-path="url(#bccal)">
+          <circle cx="50" cy="50" r="34" fill="#fff"/>
+          <g stroke="#0B7C42" fill="none">
+            <path d="M34 16 C 20 34, 20 66, 34 84" stroke-width="2.2"/>
+            <path d="M42 15 C 32 34, 32 66, 42 85" stroke-width="2.6"/>
+            <path d="M50 15 C 46 34, 46 66, 50 85" stroke-width="3"/>
+            <path d="M58 15 C 60 34, 60 66, 58 85" stroke-width="3.4"/>
+            <path d="M66 16 C 74 34, 74 66, 66 84" stroke-width="3.8"/>
+            <path d="M74 20 C 86 36, 86 64, 74 80" stroke-width="4.2"/>
+            <path d="M80 25 C 94 38, 94 62, 80 75" stroke-width="4.6"/>
+          </g>
+        </g>
+        <defs><clipPath id="bccal"><circle cx="50" cy="50" r="34"/></clipPath></defs>
+      </svg>
+      <b>National<br>Basketball Arena<span>Tymon Park &middot; Dublin 24</span></b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="calendar.html" aria-current="page">Availability</a>
+    </nav>
+    <a class="btn" href="index.html#enquire">Contact us</a>
+  </div>
+</header>
+<main>
+  <div class="wrap page-head">
+    <p class="eyebrow">Availability</p>
+    <h1>See what&rsquo;s free,<br>then check your date</h1>
+    <p>Confirmed bookings are shown below &mdash; select one for details and tickets. Anything unmarked is open, and choosing a free day carries the date straight through to the enquiry form.</p>
+    <div class="cta">
+      <a class="btn" href="index.html#enquire">Check a date</a>
+      <a class="btn btn-ghost" href="whats-on.html">What&rsquo;s on</a>
+    </div>
+    <ul class="legend-row">
+      <li><span class="key key-free"></span>Available</li>
+      <li><span class="key key-bball"></span>Basketball</li>
+      <li><span class="key key-sport"></span>Other sport</li>
+      <li><span class="key key-conf"></span>Conference</li>
+      <li><span class="key key-expo"></span>Exhibition</li>
+      <li><span class="key key-private"></span>Private booking</li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <div class="months"><div class="cal"><h2>September 2026</h2><div class="cal-grid"><span class="dow">Mon</span><span class="dow">Tue</span><span class="dow">Wed</span><span class="dow">Thu</span><span class="dow">Fri</span><span class="dow">Sat</span><span class="dow">Sun</span><div class="day pad"></div><a class="day free" href="index.html?date=2026-09-01#enquire"><span class="n">1</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-02#enquire"><span class="n">2</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-03#enquire"><span class="n">3</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-04#enquire"><span class="n">4</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-05#enquire"><span class="n">5</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-06#enquire"><span class="n">6</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-07#enquire"><span class="n">7</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-08#enquire"><span class="n">8</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-09#enquire"><span class="n">9</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-10#enquire"><span class="n">10</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-11#enquire"><span class="n">11</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-sport" data-ev="taekwondo"><span class="n">12</span><span class="ev">Taekwondo Nationals</span></button><button type="button" class="day busy cat-sport" data-ev="taekwondo"><span class="n">13</span><span class="ev">Taekwondo Nationals</span></button><a class="day free" href="index.html?date=2026-09-14#enquire"><span class="n">14</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-15#enquire"><span class="n">15</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-16#enquire"><span class="n">16</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-17#enquire"><span class="n">17</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-18#enquire"><span class="n">18</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-bball" data-ev="ireland-cyprus"><span class="n">19</span><span class="ev">Ireland v Cyprus</span></button><a class="day free" href="index.html?date=2026-09-20#enquire"><span class="n">20</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-21#enquire"><span class="n">21</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-22#enquire"><span class="n">22</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-23#enquire"><span class="n">23</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-24#enquire"><span class="n">24</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-private" data-ev="private-1"><span class="n">25</span><span class="ev">Private booking</span></button><a class="day free" href="index.html?date=2026-09-26#enquire"><span class="n">26</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-27#enquire"><span class="n">27</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-28#enquire"><span class="n">28</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-29#enquire"><span class="n">29</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-09-30#enquire"><span class="n">30</span><span class="go">Check &rarr;</span></a><div class="day pad"></div><div class="day pad"></div><div class="day pad"></div><div class="day pad"></div></div></div><div class="cal"><h2>October 2026</h2><div class="cal-grid"><span class="dow">Mon</span><span class="dow">Tue</span><span class="dow">Wed</span><span class="dow">Thu</span><span class="dow">Fri</span><span class="dow">Sat</span><span class="dow">Sun</span><div class="day pad"></div><div class="day pad"></div><div class="day pad"></div><a class="day free" href="index.html?date=2026-10-01#enquire"><span class="n">1</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-02#enquire"><span class="n">2</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-bball" data-ev="eanna-star"><span class="n">3</span><span class="ev">&Eacute;anna v Belfast Star</span></button><a class="day free" href="index.html?date=2026-10-04#enquire"><span class="n">4</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-05#enquire"><span class="n">5</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-06#enquire"><span class="n">6</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-07#enquire"><span class="n">7</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-conf" data-ev="founders"><span class="n">8</span><span class="ev">Founders Summit</span></button><a class="day free" href="index.html?date=2026-10-09#enquire"><span class="n">9</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-10#enquire"><span class="n">10</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-11#enquire"><span class="n">11</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-12#enquire"><span class="n">12</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-13#enquire"><span class="n">13</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-14#enquire"><span class="n">14</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-15#enquire"><span class="n">15</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-16#enquire"><span class="n">16</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-17#enquire"><span class="n">17</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-18#enquire"><span class="n">18</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-private" data-ev="private-2"><span class="n">19</span><span class="ev">Private booking</span></button><a class="day free" href="index.html?date=2026-10-20#enquire"><span class="n">20</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-21#enquire"><span class="n">21</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-22#enquire"><span class="n">22</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-23#enquire"><span class="n">23</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-expo" data-ev="brick-show"><span class="n">24</span><span class="ev">Dublin Brick Show</span></button><a class="day free" href="index.html?date=2026-10-25#enquire"><span class="n">25</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-26#enquire"><span class="n">26</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-27#enquire"><span class="n">27</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-28#enquire"><span class="n">28</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-29#enquire"><span class="n">29</span><span class="go">Check &rarr;</span></a><a class="day free" href="index.html?date=2026-10-30#enquire"><span class="n">30</span><span class="go">Check &rarr;</span></a><button type="button" class="day busy cat-bball" data-ev="cup-semis"><span class="n">31</span><span class="ev">Cup Semi-Finals</span></button><div class="day pad"></div></div></div></div>
+    <div class="cal-foot">
+      <p>Holding a date provisionally is free, and we&rsquo;ll hold it for 14 days while you confirm. Private bookings are listed without detail at the client&rsquo;s request &mdash; the venue is simply unavailable those days.</p>
+      <a class="btn" href="index.html#enquire">Check a date</a>
+    </div>
+  </div>
+</main>
+
+<dialog class="ev-dlg" id="evDlg" aria-labelledby="dlgTitle">
+  <div class="dlg-top">
+    <span class="dlg-date" id="dlgDate"></span>
+    <button type="button" class="dlg-close" id="dlgClose">Close</button>
+  </div>
+  <div class="dlg-body" id="dlgBody"></div>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>National Basketball Arena</h4>
+      <p style="font-size:15px;line-height:1.6;opacity:.85">Tymon Park, Dublin, D24 N449<br>+353 1 459 0211<br>arenabookings@ireland.basketball</p>
+    </div>
+    <div>
+      <h4>Hire the venue</h4>
+      <a href="calendar.html">Availability</a>
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical spec</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="index.html#enquire">Check a date</a>
+    </div>
+    <div>
+      <h4>Basketball</h4>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="https://ireland.basketball/tickets">Tickets</a>
+      <a href="https://ireland.basketball/internationalfixtures">Fixtures</a>
+      <a href="https://ireland.basketball/">Basketball Ireland</a>
+    </div>
+    <div class="colophon">
+      <span>A not-for-profit venue owned by Basketball Ireland</span>
+      <span>Privacy &middot; Accessibility</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var mb=document.getElementById("menuBtn"),nv=document.getElementById("nav");
+  if(mb) mb.addEventListener("click",function(){
+    var open=nv.classList.toggle("open");
+    mb.setAttribute("aria-expanded",String(open));
+    mb.textContent=open?"Close":"Menu";
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var EV={"taekwondo": {"date": "12 September 2026 &ndash; 13 September 2026", "title": "Taekwondo National Championships", "cat": "sport", "catlabel": "Sport", "tag": "tag-sport", "time": "Sat &amp; Sun, 9:00am &ndash; 6:00pm", "blurb": "All belts and age grades over two days, with eight competition mats laid across the full arena floor. Under-8s free.", "tix": "<div class=\"tix\"><p class=\"tix-price\"><span>From</span> <b>&euro;15</b></p><a class=\"btn\" href=\"https://ireland.basketball/tickets\">Buy tickets</a></div>", "public": true}, "ireland-cyprus": {"date": "19 September 2026", "title": "Ireland v Cyprus &mdash; EuroBasket Qualifier", "cat": "bball", "catlabel": "Basketball", "tag": "", "time": "Sat, tip-off 7:30pm &middot; doors 6:15pm", "blurb": "Senior men&rsquo;s FIBA EuroBasket qualifier. Bleachers deployed on all four sides for a full house of 2,500.", "tix": "<div class=\"tix out\"><p class=\"tix-price\"><span>From</span> <b>&euro;25</b></p><span class=\"soldout\" role=\"status\">Sold out</span></div>", "public": true}, "private-1": {"date": "25 September 2026", "title": "Private booking", "cat": "private", "catlabel": "Private", "tag": "tag-private", "time": "", "blurb": "", "tix": "", "public": false}, "eanna-star": {"date": "3 October 2026", "title": "&Eacute;anna v Belfast Star &mdash; Super League", "cat": "bball", "catlabel": "Basketball", "tag": "", "time": "Sat, tip-off 7:00pm &middot; doors 6:00pm", "blurb": "Men&rsquo;s Super League regular season. Sideline seating only; under-16s half price with a paying adult.", "tix": "<div class=\"tix\"><p class=\"tix-price\"><span>From</span> <b>&euro;12</b></p><a class=\"btn\" href=\"https://ireland.basketball/tickets\">Buy tickets</a></div>", "public": true}, "founders": {"date": "8 October 2026", "title": "Tech Ireland Founders Summit", "cat": "conf", "catlabel": "Conference", "tag": "tag-conf", "time": "Thu, 9:30am &ndash; 5:00pm", "blurb": "Full-floor conference for 900 delegates, with breakout sessions in the hospitality suite. Tickets sold by the organiser.", "tix": "<div class=\"tix\"><p class=\"tix-price\"><span>From</span> <b>&euro;180</b></p><a class=\"btn\" href=\"https://ireland.basketball/tickets\">Buy tickets</a></div>", "public": true}, "private-2": {"date": "19 October 2026", "title": "Private booking", "cat": "private", "catlabel": "Private", "tag": "tag-private", "time": "", "blurb": "", "tix": "", "public": false}, "brick-show": {"date": "24 October 2026", "title": "Dublin Brick Show", "cat": "expo", "catlabel": "Exhibition", "tag": "tag-expo", "time": "Sat, 10:00am &ndash; 5:00pm", "blurb": "Family exhibition with build zones, trader stands and display models across the arena floor. Free parking on site.", "tix": "<div class=\"tix\"><p class=\"tix-price\"><span>From</span> <b>&euro;10</b></p><a class=\"btn\" href=\"https://ireland.basketball/tickets\">Buy tickets</a></div>", "public": true}, "cup-semis": {"date": "31 October 2026", "title": "National Cup Semi-Finals", "cat": "bball", "catlabel": "Basketball", "tag": "", "time": "Sat, from 2:00pm", "blurb": "Four semi-finals across the day, men&rsquo;s and women&rsquo;s. One ticket admits to all games.", "tix": "<div class=\"tix\"><p class=\"tix-price\"><span>From</span> <b>&euro;18</b></p><a class=\"btn\" href=\"https://ireland.basketball/tickets\">Buy tickets</a></div>", "public": true}};
+  var dlg=document.getElementById("evDlg"),
+      dDate=document.getElementById("dlgDate"),
+      dBody=document.getElementById("dlgBody"),
+      last=null;
+
+  function open(id){
+    var e=EV[id]; if(!e)return;
+    dDate.textContent=e.date.replace("&ndash;","–");
+    if(e.public){
+      dBody.innerHTML='<span class="ev-tag '+e.tag+'">'+e.catlabel+'</span>'+
+        '<h3 id="dlgTitle">'+e.title+'</h3>'+
+        '<p class="dlg-when">'+e.time+'</p>'+
+        '<p class="blurb">'+e.blurb+'</p>'+
+        e.tix+
+        '<a class="dlg-more" href="whats-on.html">See all upcoming events &rarr;</a>';
+    } else {
+      dBody.innerHTML='<span class="ev-tag tag-private">Private</span>'+
+        '<h3 id="dlgTitle">Private booking</h3>'+
+        '<p class="blurb">The Arena is booked privately on this date and is not available for hire. '+
+        'No details are published at the client&rsquo;s request.</p>'+
+        '<a class="dlg-more" href="index.html#enquire">Check a different date &rarr;</a>';
+    }
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute("open","");
+  }
+
+  [].slice.call(document.querySelectorAll("button.day.busy")).forEach(function(b){
+    b.addEventListener("click",function(){ last=b; open(b.dataset.ev); });
+  });
+  document.getElementById("dlgClose").addEventListener("click",function(){ dlg.close(); });
+  dlg.addEventListener("click",function(e){ if(e.target===dlg) dlg.close(); });
+  dlg.addEventListener("close",function(){ if(last) last.focus(); });
+})();
+</script>
+</body>
+</html>
