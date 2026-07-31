@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redevelopment &mdash; National Basketball Arena</title>
+<meta name="description" content="Plans for the €38m redevelopment of the National Basketball Arena: capacity to 3,272, four courts, gym, café and corporate facilities.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0B7C42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0B7C42; --green-dk:#06582F; --green-lt:#E7F1EA;
+  --ink:#10161A; --ink-60:#55606A; --line:#DCE2E0;
+  --paper:#FFFFFF; --paper-2:#F4F7F5; --maple:#C4863C; --red:#C3341F; --red-lt:#FBE6E2;
+  --display:"Outfit",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.04;letter-spacing:-.01em;text-transform:uppercase}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);display:flex;align-items:center;gap:10px}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--line)}
+.mark{display:block;flex-shrink:0}
+.masthead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;gap:26px;height:76px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.18}
+.brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ink-60);font-weight:400;text-transform:none}
+nav{margin-left:auto;display:flex;gap:24px}
+nav a{font-size:14px;text-decoration:none;color:var(--ink-60);font-weight:500;padding:4px 0;border-bottom:2px solid transparent;transition:.15s}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--green)}
+nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--green)}
+.btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:15px;background:var(--green);color:#fff;text-decoration:none;padding:12px 22px;border:0;cursor:pointer;transition:.15s;text-align:center}
+.btn:hover,.btn:focus-visible{background:var(--green-dk)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--ink);color:#fff}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:8px 12px;font-family:var(--mono);font-size:12px;cursor:pointer}
+.page-head{padding:clamp(40px,6vw,68px) 0 clamp(28px,4vw,44px)}
+.page-head h1{font-size:clamp(34px,4.6vw,58px);font-weight:800;margin-top:16px}
+.page-head p{margin-top:18px;color:var(--ink-60);max-width:56ch}
+.page-head .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+footer{background:var(--ink);color:#fff;padding:56px 0 34px;margin-top:clamp(56px,7vw,96px)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h4{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#8A959C;margin-bottom:14px;font-weight:400}
+footer a{display:block;color:#fff;text-decoration:none;font-size:14.5px;padding:5px 0;opacity:.85}
+footer a:hover{opacity:1;text-decoration:underline}
+.colophon{grid-column:1/-1;border-top:1px solid #262E34;margin-top:24px;padding-top:20px;font-family:var(--mono);font-size:11px;color:#8A959C;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:920px){
+  footer .wrap{grid-template-columns:1fr 1fr}
+  nav{display:none}
+  nav.open{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);z-index:60}
+  nav.open a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:block}
+  .masthead .btn{display:none}
+}
+
+.reviews{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;position:relative;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);
+          mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.rev-track{display:flex;width:max-content;animation:revscroll 58s linear infinite}
+.reviews:hover .rev-track,.reviews:focus-within .rev-track{animation-play-state:paused}
+@keyframes revscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.rev{flex:0 0 auto;width:clamp(280px,32vw,400px);padding:20px 26px;border-right:1px solid var(--line)}
+.rev q{display:block;font-size:15.5px;line-height:1.5;quotes:none}
+.rev q::before{content:"\201C";color:var(--green);font-family:var(--display);font-weight:800;font-size:20px;margin-right:2px}
+.rev cite{display:block;margin-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-60);font-style:normal}
+@media (prefers-reduced-motion:reduce){
+  .reviews{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+  .rev-track{animation:none}
+}
+
+.hero-img{margin:0}
+.hero-img img{width:100%;height:auto;display:block}
+.hero-img figcaption{font-family:var(--mono);font-size:11px;color:var(--ink-60);padding:10px 0 0;letter-spacing:.03em}
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);margin:clamp(36px,5vw,56px) 0}
+.fig{background:#fff;padding:24px 20px 26px}
+.fig b{display:block;font-family:var(--display);font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1;color:var(--green)}
+.fig span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-60);margin-top:9px}
+section.rd{padding:clamp(48px,6vw,84px) 0;border-top:1px solid var(--line)}
+.rd-head{max-width:60ch;margin-bottom:36px}
+.rd-head h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;margin-top:16px}
+.rd-head p{margin-top:16px;color:var(--ink-60)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center}
+.split img{width:100%;height:auto;display:block}
+.split figcaption{font-family:var(--mono);font-size:11px;color:var(--ink-60);padding-top:10px}
+.ticks{list-style:none}
+.ticks li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.ticks li b{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--green);
+  flex:0 0 104px;font-weight:400;padding-top:3px}
+.pull{background:var(--green);color:#fff;padding:clamp(32px,4vw,52px);margin:clamp(36px,5vw,56px) 0}
+.pull blockquote{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.7vw,30px);line-height:1.2;max-width:24ch}
+.pull cite{display:block;margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;font-style:normal;opacity:.9}
+.steps{list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:var(--mono);font-size:12px;
+  color:var(--green);padding-top:4px}
+.steps h3{font-size:17px;text-transform:none;letter-spacing:0}
+.steps p{margin-top:6px;font-size:15.5px;color:var(--ink-60)}
+.steps .when{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-60);margin-top:8px;display:block}
+.steps li.done h3::after{content:"Complete";margin-left:10px;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--green);color:#fff;padding:3px 8px;vertical-align:middle}
+.note{background:var(--paper-2);border-left:3px solid var(--green);padding:24px 26px;margin-top:36px}
+.note h3{font-size:17px;text-transform:none;letter-spacing:0}
+.note p{margin-top:10px;color:var(--ink-60);font-size:15.5px}
+.note a{color:var(--green);font-weight:600}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="National Basketball Arena, home">
+      <svg class="mark" width="44" height="44" viewBox="0 0 100 100" aria-hidden="true">
+        <rect width="100" height="100" fill="#0B7C42"/>
+        <g clip-path="url(#bcrd)">
+          <circle cx="50" cy="50" r="34" fill="#fff"/>
+          <g stroke="#0B7C42" fill="none">
+            <path d="M34 16 C 20 34, 20 66, 34 84" stroke-width="2.2"/>
+            <path d="M42 15 C 32 34, 32 66, 42 85" stroke-width="2.6"/>
+            <path d="M50 15 C 46 34, 46 66, 50 85" stroke-width="3"/>
+            <path d="M58 15 C 60 34, 60 66, 58 85" stroke-width="3.4"/>
+            <path d="M66 16 C 74 34, 74 66, 66 84" stroke-width="3.8"/>
+            <path d="M74 20 C 86 36, 86 64, 74 80" stroke-width="4.2"/>
+            <path d="M80 25 C 94 38, 94 62, 80 75" stroke-width="4.6"/>
+          </g>
+        </g>
+        <defs><clipPath id="bcrd"><circle cx="50" cy="50" r="34"/></clipPath></defs>
+      </svg>
+      <b>National<br>Basketball Arena<span>Tymon Park &middot; Dublin 24</span></b>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav">
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical</a>
+      <a href="redevelopment.html" aria-current="page">Redevelopment</a>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="calendar.html">Availability</a>
+    </nav>
+    <a class="btn" href="index.html#enquire">Contact us</a>
+  </div>
+</header>
+<main>
+  <div class="wrap page-head">
+    <p class="eyebrow">Redevelopment</p>
+    <h1>A &euro;38m rebuild of<br>Ireland&rsquo;s home of indoor sport</h1>
+    <p>South Dublin County Council granted planning permission for a full redevelopment of the Arena. The plans take the building to 8,000 square metres, double the seated capacity, and add four courts, a gym, a caf&eacute; and corporate facilities.</p>
+    <div class="cta">
+      <a class="btn" href="index.html#enquire">Talk to us about future dates</a>
+      <a class="btn btn-ghost" href="calendar.html">Current availability</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <figure class="hero-img">
+      <img src="images/redev-exterior.jpg" width="1200" height="675" alt="The redeveloped Arena from the car park, with the new frontage and café pavilion" loading="eager" fetchpriority="high">
+      <figcaption>The redeveloped Arena from the car park, with the new frontage and café pavilion</figcaption>
+    </figure>
+
+    <div class="figures">
+      <div class="fig"><b>&euro;38m</b><span>Total project</span></div>
+      <div class="fig"><b>3,272</b><span>New capacity</span></div>
+      <div class="fig"><b>8,000</b><span>Square metres</span></div>
+      <div class="fig"><b>4</b><span>Basketball courts</span></div>
+      <div class="fig"><b>18</b><span>Months of works</span></div>
+    </div>
+  </div>
+
+  <section class="rd">
+    <div class="wrap">
+      <div class="rd-head">
+        <p class="eyebrow">What changes</p>
+        <h2>Twice the seats, four times the courts</h2>
+        <p>The redevelopment keeps what the building is good at &mdash; one large, flat, accessible floor &mdash; and adds the capacity and back-of-house that a national venue needs.</p>
+      </div>
+      <div class="split">
+        <ul class="ticks">
+          <li><b>Capacity</b><span>Seated capacity roughly doubles, to 3,272</span></li>
+          <li><b>Courts</b><span>Space for four basketball courts</span></li>
+          <li><b>Training</b><span>A gym within the building</span></li>
+          <li><b>Front of house</b><span>Caf&eacute; and a new entrance concourse</span></li>
+          <li><b>Business</b><span>Corporate facilities and offices for Basketball Ireland</span></li>
+          <li><b>Access</b><span>Fully accessible and inclusive throughout</span></li>
+        </ul>
+        <figure>
+          <img src="images/redev-bowl.jpg" width="1000" height="562" alt="Inside the new bowl — capacity doubles to 3,272 with tiered seating on all sides" loading="lazy">
+          <figcaption>Inside the new bowl — capacity doubles to 3,272 with tiered seating on all sides</figcaption>
+        </figure>
+      </div>
+
+      <div class="pull">
+        <blockquote>The Arena will be &ldquo;transformative for Irish indoor sport&rdquo;.</blockquote>
+        <cite>John Feehan, Chief Executive, Basketball Ireland</cite>
+      </div>
+
+      <div class="split">
+        <figure>
+          <img src="images/redev-foyer.jpg" width="1000" height="562" alt="The new entrance concourse, café and reception" loading="lazy">
+          <figcaption>The new entrance concourse, café and reception</figcaption>
+        </figure>
+        <div>
+          <h2 style="font-size:clamp(22px,2.6vw,30px);font-weight:800">Not just basketball</h2>
+          <p style="margin-top:16px;color:var(--ink-60)">The plans have the backing of several other national governing bodies who want to use the building &mdash; Volleyball Ireland, Badminton Ireland and Irish Squash among them.</p>
+          <p style="margin-top:14px;color:var(--ink-60)">That matters for commercial hire too. A venue built to serve several indoor sports is a venue built for flexible floor use, which is the same quality an exhibition or conference organiser is buying.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" aria-label="What people say about the Arena"><div class="rev-track"><figure class="rev"><q>The atmosphere when it&rsquo;s full is like nothing else in Irish indoor sport.</q><cite>Club coach, Dublin</cite></figure><figure class="rev"><q>Sightlines are superb. There genuinely isn&rsquo;t a bad seat in the place.</q><cite>Season ticket holder</cite></figure><figure class="rev"><q>Load-in to fully set up in under two hours. The crew know the building.</q><cite>Exhibition organiser</cite></figure><figure class="rev"><q>Bright, warm and spotless, and the floor is in beautiful condition.</q><cite>Visiting team manager</cite></figure><figure class="rev"><q>The easiest venue in Dublin to get to, and parking is never a worry.</q><cite>Conference producer</cite></figure><figure class="rev"><q>Noise stays in the room. It feels like a proper national arena.</q><cite>Supporter, Cork</cite></figure><figure class="rev" aria-hidden="true"><q>The atmosphere when it&rsquo;s full is like nothing else in Irish indoor sport.</q><cite>Club coach, Dublin</cite></figure><figure class="rev" aria-hidden="true"><q>Sightlines are superb. There genuinely isn&rsquo;t a bad seat in the place.</q><cite>Season ticket holder</cite></figure><figure class="rev" aria-hidden="true"><q>Load-in to fully set up in under two hours. The crew know the building.</q><cite>Exhibition organiser</cite></figure><figure class="rev" aria-hidden="true"><q>Bright, warm and spotless, and the floor is in beautiful condition.</q><cite>Visiting team manager</cite></figure><figure class="rev" aria-hidden="true"><q>The easiest venue in Dublin to get to, and parking is never a worry.</q><cite>Conference producer</cite></figure><figure class="rev" aria-hidden="true"><q>Noise stays in the room. It feels like a proper national arena.</q><cite>Supporter, Cork</cite></figure></div></section>
+
+  <section class="rd">
+    <div class="wrap">
+      <div class="rd-head">
+        <p class="eyebrow">Where it stands</p>
+        <h2>Progress so far</h2>
+        <p>Planning is secured. Funding is the remaining piece, with an application made to the Large Scale Sport Infrastructure Fund.</p>
+      </div>
+      <ol class="steps">
+        <li class="done">
+          <div><h3>Design and planning application</h3>
+          <p>Scheme developed for the Tymon Park site and lodged with South Dublin County Council.</p></div>
+        </li>
+        <li class="done">
+          <div><h3>Planning permission granted</h3>
+          <p>South Dublin County Council notified Basketball Ireland of its decision to grant permission for the scheme.</p>
+          <span class="when">September 2024</span></div>
+        </li>
+        <li>
+          <div><h3>Funding</h3>
+          <p>Financing is the key remaining element, including an application to the Government&rsquo;s Large Scale Sport Infrastructure Fund. A start date follows from that.</p>
+          <span class="when">In progress</span></div>
+        </li>
+        <li>
+          <div><h3>Construction</h3>
+          <p>Works are expected to take around 18 months once they begin.</p>
+          <span class="when">18 months</span></div>
+        </li>
+      </ol>
+
+      <div class="note">
+        <h3>Booking the Arena during the works</h3>
+        <p>The Arena is taking bookings as normal and a construction start date has not been set. If your event falls in a period that could be affected we will tell you before you commit, and we will hold an alternative date where we can. <a href="index.html#enquire">Check a date</a> or call +353 1 459 0211.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rd">
+    <div class="wrap">
+      <div class="rd-head">
+        <p class="eyebrow">Why it matters</p>
+        <h2>Every booking already funds the game</h2>
+        <p>The Arena is a not-for-profit venue. Income from hire filters back through Irish basketball, and a bigger, better building generates more of it &mdash; at a point when the registered playing population grew by more than a fifth in a single year.</p>
+      </div>
+      <figure class="hero-img">
+        <img src="images/redev-planning.jpg" width="900" height="506" alt="Planning permission confirmed by South Dublin County Council, September 2024" loading="lazy">
+        <figcaption>Planning permission confirmed by South Dublin County Council, September 2024</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>National Basketball Arena</h4>
+      <p style="font-size:15px;line-height:1.6;opacity:.85">Tymon Park, Dublin, D24 N449<br>+353 1 459 0211<br>arenabookings@ireland.basketball</p>
+    </div>
+    <div>
+      <h4>Hire the venue</h4>
+      <a href="calendar.html">Availability</a>
+      <a href="index.html#spaces">Spaces</a>
+      <a href="index.html#spec">Technical spec</a>
+      <a href="redevelopment.html">Redevelopment</a>
+      <a href="index.html#enquire">Check a date</a>
+    </div>
+    <div>
+      <h4>Basketball</h4>
+      <a href="whats-on.html">What&rsquo;s on</a>
+      <a href="https://ireland.basketball/tickets">Tickets</a>
+      <a href="https://ireland.basketball/internationalfixtures">Fixtures</a>
+      <a href="https://ireland.basketball/">Basketball Ireland</a>
+    </div>
+    <div class="colophon">
+      <span>A not-for-profit venue owned by Basketball Ireland</span>
+      <span>Privacy &middot; Accessibility</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var mb=document.getElementById("menuBtn"),nv=document.getElementById("nav");
+  if(mb) mb.addEventListener("click",function(){
+    var open=nv.classList.toggle("open");
+    mb.setAttribute("aria-expanded",String(open));
+    mb.textContent=open?"Close":"Menu";
+  });
+})();
+</script>
+
+</body>
+</html>
